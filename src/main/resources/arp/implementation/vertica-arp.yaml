@@ -122,7 +122,7 @@ data_types:
 relational_algebra:
   aggregation:
     enable: true
-    group_by_ordinal: false
+    group_by_ordinal: true
     distinct: true
     count_functions:
       count_star:
@@ -215,7 +215,7 @@ expressions:
     scalar: true
     in_clause: true
   supports_case: true
-  supports_over: false
+  supports_over: true
   operators:
     - names:
       - "="
@@ -261,6 +261,18 @@ expressions:
       - args:
         - "date"
         - "date"
+        return: "boolean"
+      - args:
+        - "boolean"
+        - "boolean"
+        return: "boolean"
+      - args:
+        - "bigint"
+        - "integer"
+        return: "boolean"
+      - args:
+        - "bigint"
+        - "bigint"
         return: "boolean"
     - names:
       - "="
